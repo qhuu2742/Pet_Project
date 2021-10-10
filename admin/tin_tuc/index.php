@@ -17,6 +17,7 @@ $sql = "select * from tin_tuc";
 $result = mysqli_query($connect, $sql);
 ?>
 
+<?php include '../common/menu.php' ?>
 <table width="100%" border="1">
     <tr>
         <th>Tiêu đề</th>

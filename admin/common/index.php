@@ -8,8 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+
 Trang quản lý:
 <br>
-<?php include "menu.php"?>
+<?php include "menu.php" ?>
 </body>
 </html>
