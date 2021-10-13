@@ -1,4 +1,3 @@
-<?php include '../check_admin.php'; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,10 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-Chào <?php echo $_SESSION['ten']; ?>
-<br>
-Trang quản lý:
-<br>
-<?php include "menu.php" ?>
+<?php if (isset($_GET['error'])){ ?>
+<?php echo $_GET['error']; ?>
+<?php } ?>
+<form action="process_login.php" method="post">
+    Email: <input type="email" name="email">
+    <br>
+    Password: <input type="password" name="mat_khau">
+    <br>
+    <button>Đăng nhập</button>
+</form>
 </body>
 </html>

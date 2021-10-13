@@ -1,4 +1,4 @@
-<?php include '../check_admin.php'; ?>
+<?php include '../check_super_admin.php' ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,10 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-Chào <?php echo $_SESSION['ten']; ?>
+Đây là khu vực của Superadmin:
 <br>
-Trang quản lý:
-<br>
-<?php include "menu.php" ?>
 </body>
 </html>
