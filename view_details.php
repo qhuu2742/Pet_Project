@@ -22,7 +22,7 @@
 <?php
 $ma = $_GET['ma'];
 include 'connect.php';
-$sql = "select * from tin_tuc where ma = '$ma'";
+$sql = "select * from san_pham where ma = '$ma'";
 $result = mysqli_query($connect, $sql);
 $each = mysqli_fetch_array($result);
 ?>
@@ -31,11 +31,11 @@ $each = mysqli_fetch_array($result);
 
 <?php include 'footer.php'; ?>
 <h1>
-    <?php echo $each['tieu_de']; ?>
+    <?php echo $each['ten']; ?>
 </h1>
 
 <p>
-    <?php echo $each['noi_dung']; ?>
+    <?php echo $each['mo_ta']; ?>
 </p>
 <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="js/jquery-easing-1.3.js" type="text/javascript"></script>

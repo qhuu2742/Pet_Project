@@ -6,6 +6,10 @@
             <li class="tweat"><a href="#" onClick="return false">Visit our twitter Account</a></li>
             <li class="instagram"><a href="#" onClick="return false">Visit our instagram Account</a></li>
         </ul>
-        <p class="small alignright"> © 2013, FULLSCREEN</p>
+        <?php if (empty($_SESSION)){ ?>
+            <p class="small alignright">Xin chào bạn</p>
+        <?php }else{ ?>
+        <p class="small alignright">Xin chào bạn <?php echo $_SESSION['ten'] ?></p>
+        <?php } ?>
     </div>
 </footer>

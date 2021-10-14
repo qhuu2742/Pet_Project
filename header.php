@@ -16,11 +16,17 @@
                 </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html" class="current">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <?php if (empty($_SESSION)) { ?>
+                <li><a href="form_login.php">Đăng nhập</a></li>
+                <?php }else{ ?>
+
+               <li><a href="logout.php">Đăng xuất</a></li>
+
+                <?php } ?>
             </ul>
             <ul id="homepage" class="option-set clearfix" data-option-key="filter">
                 <li><a href="#filter=.home" class="selected">All</a>
-                <li><a href="#filter=.tag1">Any Tag</a></li>
+                <li><a href="xem_gio_hang.php">Xem giỏ hàng</a></li>
                 <li><a href="#filter=.tag2">Other Tag</a></li>
             </ul>
         </div>

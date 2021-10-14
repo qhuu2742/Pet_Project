@@ -1,6 +1,7 @@
 <?php
+$thu_muc_anh = 'image/';
 include 'connect.php';
-$sql = "select * from tin_tuc";
+$sql = "select * from san_pham";
 $result = mysqli_query($connect, $sql);
 ?>
 
@@ -9,13 +10,17 @@ $result = mysqli_query($connect, $sql);
 
 
     <div class="col1-3 element home tag2">
-        <div class="images"><img src="images/pic08.jpg" alt="" /></div>
+        <div class="images"><img src="<?php echo $thu_muc_anh . $each['anh']?>" alt="" /></div>
         <div class="white-bottom grey-area-last teaser">
-            <h2><a href="view_details.php?ma=<?php echo $each['ma'] ?>"><?php echo $each['tieu_de'] ?></a></h2>
-            <p class="small below-h3">by Admin</p>
-            <p><?php echo substr($each['noi_dung'],0,50) ?>...</p>
+            <h2><a href="view_details.php?ma=<?php echo $each['ma'] ?>"><?php echo $each['ten'] ?></a></h2>
+            <p class="small below-h3"><?php echo $each['gia']?> VNĐ</p>
+            <p><?php echo substr($each['mo_ta'],0,50) ?>...</p>
             <div class="grey-area last smaller clearfix">
-                <p class="small"><span class="alignleft">Nov 26, 2013</span> <span class="alignright"><a href="view_details.php?ma=<?php echo $each['ma'] ?>">Read More</a></span></p>
+                <p class="small"><span class="alignleft">Nov 26, 2013</span>
+                    <?php if (isset($_SESSION['ma'])){ ?>
+                    <span class="alignright"><a href="them_san_pham_vao_gio_hang.php?ma=<?php echo $each['ma'] ?>">Thêm vào giỏ hàng</a></span>
+                    <?php } ?>
+                    </p>
             </div>
         </div>
     </div>
