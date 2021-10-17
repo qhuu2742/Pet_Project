@@ -51,6 +51,25 @@ if (!empty($_SESSION['gio_hang'])){
 <h1>Tổng: <?php echo $tong?> </h1>
 <br>
 <a href="xoa_gio_hang.php">Xóa hết giỏ hàng</a>
+<h1>
+        Thông tin người nhận
+</h1>
+<?php
+
+$ma = $_SESSION['ma'];
+$sql = "select * from khach_hang where ma = '$ma'";
+$result = mysqli_query($connect, $sql);
+$each = mysqli_fetch_array($result);
+?>
+<form action="process_dat_hang.php" method="post">
+        Tên: <input type="text" name="ten_nguoi_nhan" value="<?php echo $each['ten'] ?>">
+        <br>
+        SĐT: <input type="number" name="sdt_nguoi_nhan" value="<?php echo $each['sdt'] ?>">
+        <br>
+        Địa chỉ: <input type="text" name="dia_chi_nguoi_nhan" value="<?php echo $each['dia_chi'] ?>">
+        <br>
+        <button>Đặt hàng</button>
+</form>
 <?php } else{ ?>
     <h1>Chưa có hàng</h1>
     <a href="index.php">Quay lại mua hàng</a>

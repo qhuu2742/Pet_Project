@@ -9,10 +9,28 @@
 </head>
 <body>
 Đăng nhập khách hàng:
+<br>
+<?php
+if (isset($_COOKIE['ma'])){
+    $ma = $_COOKIE['ma'];
+    $ten = $_COOKIE['ten'];
+
+    session_start();
+    $_SESSION['ma'] =   $ma;
+    $_SESSION['ten'] = $ten;
+
+    header("location:index.php");
+}
+?>
+<?php if (isset($_GET['error'])){ ?>
+    <?php echo $_GET['error']; ?>
+<?php } ?>
 <form action="process_login.php" method="post">
     Email <input type="email" name="email">
     <br>
     Password <input type="password" name="mat_khau">
+    <br>
+    <input type="checkbox" name="ghi_nho">Ghi nhớ đăng nhập
     <br>
     <button>Đăng nhập</button>
 </form>

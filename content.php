@@ -16,7 +16,7 @@ $result = mysqli_query($connect, $sql);
             <p class="small below-h3"><?php echo $each['gia']?> VNĐ</p>
             <p><?php echo substr($each['mo_ta'],0,50) ?>...</p>
             <div class="grey-area last smaller clearfix">
-                <p class="small"><span class="alignleft">Nov 26, 2013</span>
+                <p class="small"><span class="alignleft"><?php echo date("Y/m/d") ?></span>
                     <?php if (isset($_SESSION['ma'])){ ?>
                     <span class="alignright"><a href="them_san_pham_vao_gio_hang.php?ma=<?php echo $each['ma'] ?>">Thêm vào giỏ hàng</a></span>
                     <?php } ?>

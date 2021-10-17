@@ -10,4 +10,5 @@ if (isset($_SESSION['gio_hang'][$ma_san_pham])){
     $_SESSION['gio_hang'][$ma_san_pham] = 1;
 }
 
-print_r($_SESSION);
+header("location:index.php");
+//print_r($_SESSION);

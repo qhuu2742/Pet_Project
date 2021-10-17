@@ -16,7 +16,7 @@
                 </li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html" class="current">Blog</a></li>
-                <?php if (empty($_SESSION)) { ?>
+                <?php if (!isset($_SESSION['ma'])) { ?>
                 <li><a href="form_login.php">Đăng nhập</a></li>
                 <?php }else{ ?>
 
@@ -27,7 +27,7 @@
             <ul id="homepage" class="option-set clearfix" data-option-key="filter">
                 <li><a href="#filter=.home" class="selected">All</a>
                 <li><a href="xem_gio_hang.php">Xem giỏ hàng</a></li>
-                <li><a href="#filter=.tag2">Other Tag</a></li>
+                <li><a href="xem_hoa_don.php">Xem hóa đơn</a></li>
             </ul>
         </div>
         <!-- end nav -->

@@ -18,7 +18,12 @@ if ($dem_ket_qua==1){
     $_SESSION['ma'] = $each['ma'];
     $_SESSION['ten'] = $each['ten'];
 
+    if (isset($_POST['ghi_nho'])){
+        setcookie('ma',$each['ma'], time() + 60 * 60 * 24 * 60);
+        setcookie('ten',$each['ten'], time() + 60 * 60 * 24 * 60);
+    }
+
         header("location:index.php");
 }else{
-    echo 'sai';
+    header("location:form_login.php?error=Thông tin đăng nhập sai!");
 }
